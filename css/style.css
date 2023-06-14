@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+body {
+  direction: rtl;
+  --mainColor: rgb(4, 189, 189);
+  --mainPadding: 20px;
+  --secoundColor: #eee;
+  max-width: 100%;
+}
+
+.contener {
+  padding: 0 var(--mainPadding);
+  margin: 0 auto;
+}
+
+@media (min-width: 762px) {
+  .contener {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .contener {
+    width: 970px;
+  }
+}
+@media (min-width: 1200) {
+  .contener {
+    width: 1170px;
+  }
+}
+header {
+  background-color: var(--mainColor);
+  color: var(--secoundColor);
+  padding: var(--mainPadding);
+}
+
+.choicesBox {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px 10px;
+}
+.choicesBox button {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--mainColor);
+  color: var(--secoundColor);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.result {
+  position: relative;
+  /* box-shadow: 7px 5px 5px 0px rgb(15 15 15 / 14%); */
+}
+.result::before {
+  content: "";
+  transition: all 0.5s linear;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+.result.active::before {
+  width: 100%;
+}
+.result h2 {
+  padding: var(--mainPadding);
+  border-right: 5px solid var(--mainColor);
+  background-color: var(--secoundColor);
+  margin-bottom: 10px;
+}
+.result h2:last-child {
+  text-align: center;
+  background-color: transparent;
+  font-size: 100px;
+  border: none;
+  padding: var(--mainPadding);
+  border: #eee solid 10px;
+}
+.result h2 span {
+  display: inline-block;
+  color: var(--mainColor);
+}
+
+button#clearHistory {
+  cursor: pointer;
+  display: block;
+  background-color: red;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px auto;
+  background-color: var(--secoundColor);
+}
+
+.total-results {
+  background-color: var(--secoundColor);
+  padding: var(--mainPadding);
+}
+.total-results li {
+  color: var(--mainColor);
+}
